@@ -1,0 +1,306 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Celebrate Diwali 2026 with Royal Diwali.">
+    <title>HAPPY DIWALI 2026</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="fireworks"></canvas>
+
+    <!-- NAVIGATION -->
+    <header class="navbar">
+        <a href="#home" class="logo">HAPPY <span>DIWALI</span></a>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#wishes">Wishes</a>
+            <a href="#diyas">Diyas</a>
+            <a href="#music">Music</a>
+            <a href="#greeting">Greeting Card</a>
+            <a href="#rangoli">Rangoli</a>
+            <a href="#countdown">Countdown</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#photos">Photos</a>
+        </nav>
+
+        <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">☰</button>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <img
+            class="hero-image"
+            src="https://images.pexels.com/photos/35133230/pexels-photo-35133230/free-photo-of-diwali-celebration-with-illuminated-diyas.jpeg?auto=compress&dpr=1&w=1600"
+            alt="Diwali celebration with illuminated diyas"
+        >
+
+        <div class="hero-content">
+            <p class="eyebrow">THE FESTIVAL OF LIGHTS</p>
+            <h1>HAPPY <span>DIWALI</span> 2026</h1>
+            <p class="hero-text">
+                May your life shine brighter than a thousand diyas.
+                Celebrate happiness, love and prosperity.
+            </p>
+            <a href="#wishes" class="main-btn">Explore Celebration</a>
+        </div>
+    </section>
+
+    <!-- WISHES -->
+    <section class="section" id="wishes">
+        <p class="eyebrow">SHARE THE HAPPINESS</p>
+        <h2>Diwali <span>Wishes</span></h2>
+
+        <div class="wish-card">
+            <p id="wishText">
+                May this Diwali bring happiness, prosperity and endless success into your life!
+            </p>
+
+            <button class="main-btn" id="newWishBtn">New Wish</button>
+            <button class="outline-btn" id="copyWishBtn">Copy Wish</button>
+            <button class="outline-btn" id="shareWishBtn">WhatsApp Share</button>
+        </div>
+    </section>
+
+    <!-- DIYAS -->
+    <section class="section dark-section" id="diyas">
+        <p class="eyebrow">LIGHT UP YOUR WORLD</p>
+        <h2>Light the <span>Diyas</span></h2>
+        <p class="section-description">Click on each diya to switch its light on or off.</p>
+
+        <div class="diya-container">
+            <button class="diya" aria-label="Toggle diya">🪔</button>
+            <button class="diya" aria-label="Toggle diya">🪔</button>
+            <button class="diya" aria-label="Toggle diya">🪔</button>
+            <button class="diya" aria-label="Toggle diya">🪔</button>
+            <button class="diya" aria-label="Toggle diya">🪔</button>
+        </div>
+
+        <button class="main-btn" id="lightAllBtn">Light All</button>
+        <button class="outline-btn" id="turnOffBtn">Turn All Off</button>
+    </section>
+
+    <!-- YOUTUBE MUSIC -->
+    <section class="section" id="music">
+        <p class="eyebrow">FEEL THE FESTIVE VIBES</p>
+        <h2>Diwali <span>Music</span></h2>
+        <p class="section-description">
+            Enjoy your selected Diwali celebration song.
+            Press Play to start the music.
+        </p>
+
+        <div class="music-card">
+            <div class="music-icon">🎵</div>
+            <h3>Aayi Diwali Re</h3>
+            <p>Kids Diwali Celebration Song</p>
+
+            <div class="video-wrapper">
+                <iframe
+                    src="https://www.youtube.com/embed/IPJGrwSlYtM?rel=0&playsinline=1"
+                    title="Aayi Diwali Re - Diwali Celebration Song"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <p class="music-note">
+                Use the YouTube player controls to play, pause or adjust volume.
+            </p>
+        </div>
+    </section>
+
+    <!-- PERSONALIZED GREETING CARD -->
+    <section class="section dark-section" id="greeting">
+        <p class="eyebrow">MAKE IT PERSONAL</p>
+        <h2>Personalized <span>Greeting Card</span></h2>
+
+        <div class="greeting-layout">
+            <form id="greetingForm" class="greeting-form">
+                <label for="senderName">Your Name</label>
+                <input type="text" id="senderName" placeholder="Enter your name" maxlength="30">
+
+                <label for="receiverName">Receiver's Name</label>
+                <input type="text" id="receiverName" placeholder="Enter receiver's name" maxlength="30">
+
+                <label for="personalMessage">Your Message</label>
+                <textarea id="personalMessage" rows="4" maxlength="180"
+                    placeholder="Write your Diwali message..."></textarea>
+
+                <button type="submit" class="main-btn">Generate Card</button>
+                <button type="button" class="outline-btn" id="downloadCardBtn">
+                    Download PNG
+                </button>
+            </form>
+
+            <div class="canvas-wrapper">
+                <canvas id="greetingCanvas" width="700" height="450"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- RANGOLI -->
+    <section class="section" id="rangoli">
+        <p class="eyebrow">CREATE YOUR ART</p>
+        <h2>Rangoli <span>Designer</span></h2>
+        <p class="section-description">Draw your own colourful rangoli.</p>
+
+        <div class="rangoli-tools">
+            <label>
+                Colour
+                <input type="color" id="rangoliColor" value="#ffb703">
+            </label>
+
+            <label>
+                Brush Size
+                <input type="range" id="brushSize" min="2" max="25" value="6">
+            </label>
+
+            <label>
+                <input type="checkbox" id="symmetryToggle" checked>
+                8-way symmetry
+            </label>
+
+            <button class="outline-btn" id="clearRangoliBtn">Clear</button>
+            <button class="main-btn" id="downloadRangoliBtn">Download</button>
+        </div>
+
+        <canvas id="rangoliCanvas" width="600" height="600"></canvas>
+    </section>
+
+    <!-- COUNTDOWN -->
+    <section class="section dark-section" id="countdown">
+        <p class="eyebrow">THE CELEBRATION IS COMING</p>
+        <h2>Diwali <span>Countdown</span></h2>
+        <p class="section-description">November 8, 2026 – 6:00 PM IST</p>
+
+        <div class="countdown-container">
+            <div class="time-box">
+                <strong id="days">00</strong>
+                <span>Days</span>
+            </div>
+            <div class="time-box">
+                <strong id="hours">00</strong>
+                <span>Hours</span>
+            </div>
+            <div class="time-box">
+                <strong id="minutes">00</strong>
+                <span>Minutes</span>
+            </div>
+            <div class="time-box">
+                <strong id="seconds">00</strong>
+                <span>Seconds</span>
+            </div>
+        </div>
+
+        <p id="countdownMessage"></p>
+    </section>
+
+    <!-- SWEETS AND GIFTS -->
+    <section class="section" id="gallery">
+        <p class="eyebrow">FESTIVE SPECIALS</p>
+        <h2>Sweets & <span>Gifts</span></h2>
+
+        <div class="gallery-grid">
+
+            <div class="gallery-card">
+                <img
+                    src="https://images.pexels.com/photos/8887052/pexels-photo-8887052.jpeg?auto=compress&dpr=1&w=900"
+                    alt="Assorted Indian sweets on a metallic tray"
+                    loading="lazy">
+                <h3>Indian Sweets</h3>
+                <p>Sweet moments and beautiful memories.</p>
+                <a class="photo-source" href="https://www.pexels.com/photo/chunks-of-delicious-cheesecake-in-metallic-cup-8887052/" target="_blank" rel="noopener">View Photo</a>
+            </div>
+
+            <div class="gallery-card">
+                <img
+                    src="https://images.pexels.com/photos/8819577/pexels-photo-8819577.jpeg?auto=compress&dpr=1&w=900"
+                    alt="Stacked festive gifts on a tray"
+                    loading="lazy">
+                <h3>Festive Gifts</h3>
+                <p>Share love through thoughtful gifts.</p>
+                <a class="photo-source" href="https://www.pexels.com/photo/stacked-gifts-on-a-tray-8819577/" target="_blank" rel="noopener">View Photo</a>
+            </div>
+
+            <div class="gallery-card">
+                <img
+                    src="https://images.pexels.com/photos/35133230/pexels-photo-35133230/free-photo-of-diwali-celebration-with-illuminated-diyas.jpeg?auto=compress&dpr=1&w=900"
+                    alt="Diwali celebration with illuminated diyas"
+                    loading="lazy">
+                <h3>Decorative Candles</h3>
+                <p>Bring warmth and light to every home.</p>
+                <a class="photo-source" href="https://www.pexels.com/photo/diwali-celebration-with-illuminated-diyas-35133230/" target="_blank" rel="noopener">View Photo</a>
+            </div>
+
+            <div class="gallery-card">
+                <img
+                    src="https://images.pexels.com/photos/29215356/pexels-photo-29215356/free-photo-of-vibrant-marigold-floral-arrangement-with-candlelight.jpeg?auto=compress&dpr=1&w=900"
+                    alt="Marigold flowers arranged with candlelight"
+                    loading="lazy">
+                <h3>Flowers & Decor</h3>
+                <p>Decorate your home with festive beauty.</p>
+                <a class="photo-source" href="https://www.pexels.com/photo/vibrant-marigold-floral-arrangement-with-candlelight-29215356/" target="_blank" rel="noopener">View Photo</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PHOTO GALLERY -->
+    <section class="section dark-section" id="photos">
+        <p class="eyebrow">FESTIVAL MOMENTS</p>
+        <h2>Diwali <span>Photography</span></h2>
+
+        <div class="photo-grid">
+
+            <div class="photo-card">
+                <img
+                    src="https://images.pexels.com/photos/35133230/pexels-photo-35133230/free-photo-of-diwali-celebration-with-illuminated-diyas.jpeg?auto=compress&dpr=1&w=1200"
+                    alt="Illuminated Diwali diyas"
+                    loading="lazy">
+                <h3>Glowing Diyas</h3>
+            </div>
+
+            <div class="photo-card">
+                <img
+                    src="https://images.pexels.com/photos/29215356/pexels-photo-29215356/free-photo-of-vibrant-marigold-floral-arrangement-with-candlelight.jpeg?auto=compress&dpr=1&w=1200"
+                    alt="Marigold floral decoration"
+                    loading="lazy">
+                <h3>Flowers & Decoration</h3>
+            </div>
+
+            <div class="photo-card">
+                <img
+                    src="https://images.pexels.com/photos/8819577/pexels-photo-8819577.jpeg?auto=compress&dpr=1&w=1200"
+                    alt="Festive gift arrangement"
+                    loading="lazy">
+                <h3>Festive Gifts</h3>
+            </div>
+
+            <div class="photo-card">
+                <img
+                    src="https://images.pexels.com/photos/8887052/pexels-photo-8887052.jpeg?auto=compress&dpr=1&w=1200"
+                    alt="Indian sweets"
+                    loading="lazy">
+                <h3>Indian Sweets</h3>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <h2>HAPPY <span>DIWALI 2026</span></h2>
+        <p>Celebrate Light. Spread Happiness. Share Love.</p>
+        <p class="copyright">© 2026 Royal Diwali. Created with ❤️</p>
+    </footer>
+
+    <div id="toast" role="status"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
