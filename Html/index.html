@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My School - Home</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f7fa;
+            color: #333;
+        }
+
+        nav {
+            background: #123c69;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover {
+            color: #ffd166;
+        }
+
+        .hero {
+            min-height: 550px;
+            background:
+                linear-gradient(rgba(18,60,105,.75), rgba(18,60,105,.75)),
+                url("school.jpg") center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 30px;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ffd166;
+            color: #123c69;
+            padding: 13px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 60px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #123c69;
+            margin-bottom: 35px;
+            font-size: 32px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,.1);
+        }
+
+        .card h3 {
+            color: #123c69;
+            margin: 15px 0;
+        }
+
+        .card-icon {
+            font-size: 40px;
+        }
+
+        footer {
+            background: #123c69;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media(max-width:900px) {
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width:600px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 35px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">🏫 MY SCHOOL</div>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="courses.html">Courses</a>
+        <a href="admission.html">Admission</a>
+        <a href="students.html">Students</a>
+        <a href="teachers.html">Teachers</a>
+        <a href="notice.html">Notice</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a href="location.html">Location</a>
+        <a href="admin.html">Admin</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <div>
+        <h1>Welcome to My School</h1>
+        <p>Knowledge • Discipline • Excellence</p>
+        <a href="admission.html" class="btn">Apply for Admission</a>
+    </div>
+</section>
+
+<section>
+    <h2 class="section-title">Why Choose Our School?</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="card-icon">📚</div>
+            <h3>Quality Education</h3>
+            <p>Modern and quality education for every student.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">👨‍🏫</div>
+            <h3>Expert Teachers</h3>
+            <p>Experienced and dedicated teaching staff.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🏆</div>
+            <h3>Student Success</h3>
+            <p>Helping students achieve academic excellence.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">💻</div>
+            <h3>Modern Facilities</h3>
+            <p>Computer labs, library, science labs and sports.</p>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    © 2026 My School. All Rights Reserved.
+</footer>
+
+</body>
+</html>

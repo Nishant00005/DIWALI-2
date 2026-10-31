@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <h2>📚 LibraDesk</h2>
+    <p class="demo">DEMO PROJECT</p>
+    <button data-view="dashboard">Dashboard</button>
+    <button data-view="books">Book Catalog</button>
+    <button data-view="students">Students</button>
+    <button data-view="circulation">Issue / Return</button>
+    <button data-view="reservations">Reservations</button>
+    <button data-view="history">History</button>
+    <button data-view="reports">Reports</button>
+  </aside>
+
+  <main>
+    <header>
+      <div>
+        <h1 id="pageTitle">Dashboard</h1>
+        <p>Library Management System · Frontend Demo</p>
+      </div>
+      <input id="search" placeholder="Search books..." type="search">
+    </header>
+
+    <div class="notice">
+      Demo mode: sample data is stored in this browser only.
+    </div>
+
+    <section id="dashboard" class="view">
+      <div class="stats">
+        <article><span>Total books</span><h2 id="totalBooks">0</h2></article>
+        <article><span>Available copies</span><h2 id="availableBooks">0</h2></article>
+        <article><span>Active loans</span><h2 id="activeLoans">0</h2></article>
+        <article><span>Estimated fines</span><h2 id="totalFines">₹0</h2></article>
+      </div>
+      <div class="panel">
+        <h2>Welcome to LibraDesk</h2>
+        <p>Manage books, students, borrowing, reservations and reports.</p>
+        <button class="primary" id="quickAdd">+ Add a book</button>
+      </div>
+    </section>
+
+    <section id="books" class="view hidden">
+      <div class="section-heading">
+        <h2>Book Catalog</h2>
+        <button class="primary" id="addBook">+ Add Book</button>
+      </div>
+      <div class="panel table-wrap">
+        <table>
+          <thead><tr>
+            <th>Title</th><th>Author</th><th>Category</th>
+            <th>Available</th><th>Actions</th>
+          </tr></thead>
+          <tbody id="bookRows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="students" class="view hidden">
+      <div class="section-heading">
+        <h2>Students</h2>
+        <button class="primary" id="addStudent">+ Add Student</button>
+      </div>
+      <div class="panel table-wrap">
+        <table>
+          <thead><tr><th>Name</th><th>Email</th><th>Member ID</th></tr></thead>
+          <tbody id="studentRows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="circulation" class="view hidden">
+      <div class="panel">
+        <h2>Issue a Book</h2>
+        <form id="issueForm">
+          <label>Student<select id="issueStudent" required></select></label>
+          <label>Book<select id="issueBook" required></select></label>
+          <label>Due date<input id="dueDate" type="date" required></label>
+          <button class="primary">Issue Book</button>
+        </form>
+      </div>
+      <div class="panel table-wrap">
+        <h2>Active Loans</h2>
+        <table>
+          <thead><tr><th>Book</th><th>Student</th><th>Due date</th><th>Fine</th><th>Action</th></tr></thead>
+          <tbody id="loanRows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="reservations" class="view hidden">
+      <div class="section-heading">
+        <h2>Reservations</h2>
+        <button class="primary" id="addReservation">+ Reservation</button>
+      </div>
+      <div class="panel table-wrap">
+        <table>
+          <thead><tr><th>Book</th><th>Student</th><th>Date</th><th>Status</th><th>Action</th></tr></thead>
+          <tbody id="reservationRows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="history" class="view hidden">
+      <div class="panel">
+        <h2>Activity History</h2>
+        <ul id="historyRows"></ul>
+      </div>
+    </section>
+
+    <section id="reports" class="view hidden">
+      <div class="panel">
+        <h2>Library Reports</h2>
+        <p id="reportSummary"></p>
+        <button class="primary" id="exportReport">Export CSV Report</button>
+        <button id="exportBackup">Export JSON Backup</button>
+      </div>
+    </section>
+    <footer>LibraDesk · HTML, CSS and JavaScript · Demo data only</footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

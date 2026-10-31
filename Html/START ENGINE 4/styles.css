@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&display=swap');
+
+* { box-sizing: border-box; }
+body { margin: 0; overflow: hidden; background: #02030e; color: #eff; font-family: Orbitron, sans-serif; }
+#app, canvas { width: 100vw; height: 100vh; display: block; }
+#app { position: relative; overflow: hidden; }
+canvas { position: absolute; inset: 0; }
+
+#hud, #nitro, .screen, nav { position: absolute; z-index: 2; }
+#hud { inset: 22px 28px auto; display: flex; justify-content: space-between; width: calc(100% - 56px); pointer-events: none; }
+#hud b { font-size: clamp(20px, 3vw, 30px); letter-spacing: .1em; text-shadow: 0 0 16px #00eaff; }
+i { color: #ff2fd0; font-style: normal; text-shadow: 0 0 16px #ff2fd0; }
+small { display: block; margin-top: 7px; color: #789; font-size: 8px; letter-spacing: .25em; }
+#hud section { display: flex; gap: 25px; text-align: right; }
+label { color: #8aa; font-size: 9px; letter-spacing: .14em; }
+strong { display: block; color: white; font-size: 22px; text-shadow: 0 0 12px #00eaff; }
+
+#nitro { left: 28px; bottom: 28px; width: 160px; height: 15px; border: 1px solid #00eaff; background: #061122; }
+#nitro span { position: absolute; top: -17px; left: 4px; font-size: 9px; letter-spacing: .15em; }
+#nitro div { width: 100%; height: 100%; background: linear-gradient(90deg, #06f, #0ff); box-shadow: 0 0 14px #00eaff; }
+
+.screen { inset: 0; display: grid; place-content: center; padding: 25px; text-align: center; background: radial-gradient(ellipse, #0b123aaa, #02030edd); }
+.screen p { color: #00eaff; font-size: 11px; letter-spacing: .25em; }
+.screen h1, .screen h2 { margin: 5px 0 20px; font-size: clamp(48px, 10vw, 96px); line-height: .84; text-shadow: 4px 0 #ff2fd0, -4px 0 #00eaff, 0 0 30px #73f; }
+.screen h2 { color: #ff2fd0; font-size: clamp(38px, 8vw, 72px); }
+.screen aside { color: #bcd; font-size: 13px; line-height: 2; }
+
+button { min-width: 190px; margin: 20px auto 0; padding: 15px 22px; border: 1px solid #00eaff; background: #06203ccc; color: #eff; font: 700 13px Orbitron; letter-spacing: .12em; cursor: pointer; box-shadow: 0 0 18px #00eaff88; }
+button:hover { transform: scale(1.04); background: #075c7c; }
+.hide { display: none !important; }
+
+nav { display: none; right: 15px; bottom: 18px; gap: 7px; }
+nav button { min-width: 52px; min-height: 52px; margin: 0; padding: 7px; }
+nav button:nth-child(2) { border-color: #ff2fd0; color: #ffb9ef; }
+
+@media (pointer: coarse), (max-width: 700px) {
+  nav { display: flex; }
+  #hud { inset: 16px; width: calc(100% - 32px); }
+  #nitro { left: 16px; bottom: 18px; width: 120px; }
+}

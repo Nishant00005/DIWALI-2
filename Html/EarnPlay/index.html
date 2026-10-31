@@ -1,0 +1,370 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EarnPlay | Play. Work. Earn.</title>
+<style>
+:root {
+  --bg:#0b0d14; --panel:#141824; --panel2:#1b2030;
+  --text:#f4f5fb; --muted:#9ca4b8; --purple:#9b7cff;
+  --green:#65e6a5; --border:#292e40;
+}
+* { box-sizing:border-box; }
+body {
+  margin:0; background:var(--bg); color:var(--text);
+  font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;
+}
+button { cursor:pointer; font:inherit; }
+button:focus-visible { outline:2px solid var(--green); }
+header {
+  display:flex; align-items:center; justify-content:space-between;
+  gap:16px; padding:18px 5%; border-bottom:1px solid var(--border);
+  position:sticky; top:0; z-index:5; background:#0b0d14ed;
+  backdrop-filter:blur(14px);
+}
+.logo { font-size:23px; font-weight:850; letter-spacing:-1px; }
+.logo span { color:var(--green); }
+.demo {
+  border:1px solid #8c75ff65; color:#c8baff; background:#8c75ff18;
+  padding:7px 10px; border-radius:20px; font-size:11px; font-weight:800;
+}
+.layout { display:grid; grid-template-columns:210px minmax(0,1fr); }
+aside { padding:25px 14px; border-right:1px solid var(--border); min-height:calc(100vh - 68px); }
+.nav {
+  width:100%; display:flex; gap:12px; align-items:center; text-align:left;
+  padding:13px; margin-bottom:6px; border:0; border-radius:10px;
+  color:var(--muted); background:transparent;
+}
+.nav.active,.nav:hover { color:white; background:var(--panel2); }
+.nav.active { box-shadow:inset 3px 0 var(--green); }
+main { padding:30px; max-width:1450px; width:100%; margin:auto; }
+h1 { font-size:clamp(26px,4vw,38px); margin:0 0 8px; letter-spacing:-1.3px; }
+h2 { font-size:20px; margin:0 0 16px; }
+h3 { margin:0 0 8px; font-size:17px; }
+p { color:var(--muted); line-height:1.65; }
+.small { font-size:12px; color:var(--muted); }
+.hero {
+  padding:28px; border:1px solid #7661b344; border-radius:20px;
+  background:radial-gradient(ellipse at 85% 10%,#6143a850,transparent 40%),
+  linear-gradient(120deg,#1d2034,#151824 65%);
+  display:flex; justify-content:space-between; gap:20px; align-items:center;
+}
+.hero p { max-width:520px; margin-bottom:20px; }
+.hero-icon { font-size:70px; }
+.btn {
+  background:var(--green); color:#0c1912; border:0; border-radius:10px;
+  padding:11px 16px; font-weight:800;
+}
+.btn.secondary { background:var(--panel2); color:white; border:1px solid var(--border); }
+.btn.purple { background:var(--purple); color:#151023; }
+.btn:disabled { opacity:.45; cursor:not-allowed; }
+.stats,.grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin:22px 0; }
+.stats { grid-template-columns:repeat(4,minmax(0,1fr)); }
+.card {
+  padding:20px; border:1px solid var(--border); border-radius:15px;
+  background:var(--panel); min-width:0;
+}
+.stat-label { color:var(--muted); font-size:13px; }
+.stat-value { font-size:28px; font-weight:850; margin:9px 0 4px; }
+.green { color:var(--green); }
+.purple-text { color:var(--purple); }
+.section-head { display:flex; align-items:center; justify-content:space-between; gap:12px; margin:28px 0 14px; }
+.task-icon { font-size:27px; margin-bottom:13px; }
+.reward { color:var(--green); font-weight:800; margin:15px 0; }
+.tag { display:inline-block; font-size:11px; padding:5px 8px; border-radius:6px; background:#ffffff0a; color:var(--muted); }
+.game-box { text-align:center; padding:30px 15px; }
+#target { font-size:75px; padding:15px; border:0; background:none; }
+.game-score { font-size:34px; font-weight:850; color:var(--green); }
+.notice {
+  background:#302619; border:1px solid #6b512b; color:#f2d6a0;
+  padding:14px 16px; border-radius:12px; font-size:13px; line-height:1.6;
+  margin:20px 0;
+}
+table { width:100%; border-collapse:collapse; font-size:13px; }
+td,th { text-align:left; padding:13px 8px; border-bottom:1px solid var(--border); }
+th { color:var(--muted); font-weight:600; }
+footer { padding:25px 5%; border-top:1px solid var(--border); color:var(--muted); font-size:12px; }
+.hidden { display:none!important; }
+input {
+  width:100%; padding:12px; border-radius:9px; border:1px solid var(--border);
+  background:var(--bg); color:white; margin:8px 0 14px;
+}
+label { font-size:13px; color:var(--muted); }
+@media(max-width:850px) {
+  .layout { grid-template-columns:1fr; }
+  aside { min-height:0; display:flex; overflow-x:auto; padding:8px; border-right:0;
+    border-bottom:1px solid var(--border); }
+  .nav { min-width:max-content; width:auto; margin:0 3px; padding:10px; }
+  .nav.active { box-shadow:inset 0 -3px var(--green); }
+  main { padding:18px; }
+  .stats { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media(max-width:520px) {
+  .grid { grid-template-columns:1fr; }
+  .hero { padding:20px; }
+  .hero-icon { font-size:42px; }
+  .hero p { font-size:13px; }
+  .stat-value { font-size:23px; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">Earn<span>Play</span> ⚡</div>
+  <div style="display:flex;align-items:center;gap:10px">
+    <span class="demo">DEMO MODE</span>
+    <span>👤 Guest</span>
+  </div>
+</header>
+
+<div class="layout">
+<aside>
+  <button class="nav active" data-page="home">🏠 Dashboard</button>
+  <button class="nav" data-page="games">🎮 Games</button>
+  <button class="nav" data-page="tasks">📋 Tasks</button>
+  <button class="nav" data-page="wallet">👛 My Wallet</button>
+  <button class="nav" data-page="referrals">👥 Referrals</button>
+  <button class="nav" data-page="profile">⚙️ Profile</button>
+</aside>
+
+<main>
+<section id="home" class="page">
+  <h1>Welcome to EarnPlay 👋</h1>
+  <p>Play games, explore tasks and build your skills.</p>
+  <div class="hero">
+    <div>
+      <span class="demo">YOUR DEMO DASHBOARD</span>
+      <h2 style="font-size:26px;margin-top:17px">Your next challenge starts here.</h2>
+      <p>Try the mini-game or complete a sample task to see how our rewards system works.</p>
+      <button class="btn" onclick="showPage('games')">Explore Games →</button>
+    </div>
+    <div class="hero-icon">🎯</div>
+  </div>
+  <div class="notice"><strong>Demo only:</strong> All points shown on this website are simulated. They have no cash value and cannot be redeemed for real money or UPI transfers.</div>
+  <div class="stats">
+    <div class="card"><div class="stat-label">Demo Points</div><div class="stat-value green" id="points">0</div><div class="small">Not real money</div></div>
+    <div class="card"><div class="stat-label">Tasks Completed</div><div class="stat-value" id="completed">0</div><div class="small">Demo activities</div></div>
+    <div class="card"><div class="stat-label">Games Played</div><div class="stat-value purple-text" id="played">0</div><div class="small">Practice sessions</div></div>
+    <div class="card"><div class="stat-label">Cash Balance</div><div class="stat-value">₹0</div><div class="small">No real payouts enabled</div></div>
+  </div>
+  <div class="section-head"><h2>Recommended for you</h2><button class="btn secondary" onclick="showPage('tasks')">View all →</button></div>
+  <div class="grid" id="recommended"></div>
+</section>
+
+<section id="games" class="page hidden">
+  <h1>🎮 Mini Games</h1>
+  <p>Play a simple reaction game and earn simulated demo points.</p>
+  <div class="card game-box">
+    <span class="demo">PRACTICE GAME</span>
+    <h2 style="margin-top:20px">The 10-Second Challenge</h2>
+    <p>Start the round, then tap the target as many times as possible in 10 seconds.</p>
+    <div class="game-score" id="gameScore">0 taps</div>
+    <div><button id="target" disabled aria-label="Tap target">🎯</button></div>
+    <div id="gameStatus" class="small">Ready when you are.</div>
+    <div style="margin-top:20px"><button class="btn" id="startGame" onclick="startGame()">Start Game</button></div>
+    <p class="small">Demo reward: 2 points per tap, maximum 100 points per round.</p>
+  </div>
+  <div class="notice">Game points are fictional demo credits, not cash, and do not represent a real earning opportunity.</div>
+</section>
+
+<section id="tasks" class="page hidden">
+  <h1>📋 Task Center</h1>
+  <p>Explore sample tasks. Completing these examples only changes your local demo balance.</p>
+  <div class="grid" id="taskList"></div>
+  <div class="notice">These are sample tasks, not paid jobs. Real paid tasks must come from a verified provider and must actually be available to you.</div>
+</section>
+
+<section id="wallet" class="page hidden">
+  <h1>👛 Rewards Wallet</h1>
+  <p>Review your demo activity and simulated points.</p>
+  <div class="card">
+    <div class="stat-label">Available demo points</div>
+    <div class="stat-value green" id="walletPoints">0</div>
+    <div class="notice">₹0 real cash balance. UPI withdrawal is not connected. Demo points cannot be converted to money.</div>
+    <button class="btn secondary" onclick="alert('Real withdrawals are not available in this demo.')">UPI Withdrawal — Unavailable</button>
+  </div>
+  <div class="section-head"><h2>Activity history</h2></div>
+  <div class="card" style="overflow-x:auto">
+    <table><thead><tr><th>Activity</th><th>Points</th><th>Type</th></tr></thead>
+    <tbody id="history"></tbody></table>
+  </div>
+</section>
+
+<section id="referrals" class="page hidden">
+  <h1>👥 Refer & Earn</h1>
+  <p>Preview how a referral program could look after launch.</p>
+  <div class="card">
+    <div class="task-icon">🎁</div>
+    <h2>Invite friends</h2>
+    <p>Your demo referral code:</p>
+    <div class="stat-value purple-text" id="refCode">PLAY-DEMO</div>
+    <button class="btn" onclick="copyReferral()">Copy demo code</button>
+    <p id="copyStatus" class="small"></p>
+  </div>
+  <div class="notice">This code does not track real signups and provides no real referral rewards. A production referral system needs user accounts, fraud checks and server-side tracking.</div>
+</section>
+
+<section id="profile" class="page hidden">
+  <h1>⚙️ Profile & Settings</h1>
+  <p>This prototype stores demo data in your browser only.</p>
+  <div class="card">
+    <label for="nickname">Display name</label>
+    <input id="nickname" maxlength="40" placeholder="Enter a display name">
+    <button class="btn" onclick="saveProfile()">Save profile</button>
+    <p id="profileStatus" class="small"></p>
+  </div>
+  <div class="card" style="margin-top:16px">
+    <h3>Reset demo data</h3>
+    <p>Reset points, task progress and game history stored in this browser.</p>
+    <button class="btn secondary" onclick="resetDemo()">Reset all demo data</button>
+  </div>
+  <div class="notice">Do not enter bank details, passwords, Aadhaar numbers or real UPI IDs into this demo.</div>
+</section>
+</main>
+</div>
+
+<footer>EarnPlay • Prototype v1.0 • Demo credits have no monetary value. No real payouts are enabled.</footer>
+
+<script>
+const TASKS = [
+  {id:"survey", icon:"📝", title:"Sample Survey", desc:"Explore how an online survey task might work.", reward:20, category:"Survey"},
+  {id:"writing", icon:"✍️", title:"Writing Practice", desc:"Review a sample writing assignment.", reward:30, category:"Writing"},
+  {id:"testing", icon:"🧪", title:"Website Testing", desc:"Try a sample website testing checklist.", reward:25, category:"Testing"},
+  {id:"data", icon:"⌨️", title:"Data Entry Practice", desc:"Explore a simple data entry exercise.", reward:15, category:"Data entry"},
+  {id:"research", icon:"🔎", title:"Online Research", desc:"Practice organizing public information.", reward:20, category:"Research"},
+  {id:"feedback", icon:"💬", title:"Product Feedback", desc:"Review a sample product feedback task.", reward:10, category:"Feedback"}
+];
+
+const STORAGE_KEY = "earnplay-demo-v1";
+function freshState() {
+  return {points:0, completed:[], played:0, history:[], nickname:"Guest"};
+}
+let state;
+try {
+  state = {...freshState(), ...JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}")};
+} catch(e) { state = freshState(); }
+
+function persist() {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
+  catch(e) { console.warn("Local storage is unavailable."); }
+  render();
+}
+function escapeHTML(value) {
+  return String(value).replace(/[&<>"']/g, c => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+  }[c]));
+}
+function addPoints(amount, description) {
+  state.points += amount;
+  state.history.unshift({description, amount, type:"DEMO"});
+  state.history = state.history.slice(0,50);
+  persist();
+}
+function completeTask(id) {
+  const task = TASKS.find(t => t.id === id);
+  if (!task || state.completed.includes(id)) return;
+  state.completed.push(id);
+  addPoints(task.reward, task.title);
+}
+function taskCard(task) {
+  const done = state.completed.includes(task.id);
+  return `<div class="card">
+    <div class="task-icon">${task.icon}</div>
+    <span class="tag">${task.category}</span>
+    <h3 style="margin-top:12px">${task.title}</h3>
+    <p>${task.desc}</p>
+    <div class="reward">+${task.reward} demo points</div>
+    <button class="btn ${done ? "secondary" : ""}" ${done ? "disabled" : ""}
+      onclick="completeTask('${task.id}')">${done ? "Completed ✓" : "Try demo task"}</button>
+  </div>`;
+}
+function render() {
+  document.getElementById("points").textContent = state.points;
+  document.getElementById("walletPoints").textContent = state.points;
+  document.getElementById("completed").textContent = state.completed.length;
+  document.getElementById("played").textContent = state.played;
+  document.getElementById("taskList").innerHTML = TASKS.map(taskCard).join("");
+  document.getElementById("recommended").innerHTML =
+    TASKS.filter(t => !state.completed.includes(t.id)).slice(0,3).map(taskCard).join("")
+    || '<div class="card">All sample tasks completed. Great practice!</div>';
+  document.getElementById("history").innerHTML = state.history.length
+    ? state.history.map(item => `<tr><td>${escapeHTML(item.description)}</td>
+      <td class="green">+${item.amount}</td><td>${item.type}</td></tr>`).join("")
+    : '<tr><td colspan="3">No activity yet. Try a demo task or game.</td></tr>';
+  document.getElementById("nickname").value = state.nickname || "Guest";
+  document.getElementById("refCode").textContent = "PLAY-DEMO";
+}
+function showPage(page) {
+  document.querySelectorAll(".page").forEach(p => p.classList.add("hidden"));
+  document.getElementById(page).classList.remove("hidden");
+  document.querySelectorAll(".nav").forEach(b => b.classList.toggle("active", b.dataset.page === page));
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+document.querySelectorAll(".nav").forEach(b =>
+  b.addEventListener("click", () => showPage(b.dataset.page))
+);
+
+let playing = false, taps = 0, roundTimer;
+function startGame() {
+  if (playing) return;
+  playing = true;
+  taps = 0;
+  document.getElementById("gameScore").textContent = "0 taps";
+  document.getElementById("gameStatus").textContent = "Go! Tap the target!";
+  document.getElementById("target").disabled = false;
+  document.getElementById("startGame").disabled = true;
+  clearTimeout(roundTimer);
+  roundTimer = setTimeout(endGame, 10000);
+}
+document.getElementById("target").addEventListener("click", () => {
+  if (!playing) return;
+  taps++;
+  document.getElementById("gameScore").textContent = taps + " taps";
+  document.getElementById("target").textContent = ["🎯","⭐","💎","⚡"][taps % 4];
+});
+function endGame() {
+  if (!playing) return;
+  playing = false;
+  document.getElementById("target").disabled = true;
+  document.getElementById("startGame").disabled = false;
+  document.getElementById("target").textContent = "🎯";
+  document.getElementById("gameStatus").textContent =
+    "Round complete! You tapped " + taps + " times.";
+  const reward = Math.min(taps * 2, 100);
+  state.played++;
+  if (reward > 0) addPoints(reward, "10-second game");
+  else persist();
+  alert("Demo round finished! You received " + reward +
+    " demo points. These points are not real money.");
+}
+function copyReferral() {
+  const status = document.getElementById("copyStatus");
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText("PLAY-DEMO")
+      .then(() => status.textContent = "Demo code copied.")
+      .catch(() => status.textContent = "Your demo code is PLAY-DEMO.");
+  } else status.textContent = "Your demo code is PLAY-DEMO.";
+}
+function saveProfile() {
+  state.nickname = document.getElementById("nickname").value.trim().slice(0,40) || "Guest";
+  persist();
+  document.getElementById("profileStatus").textContent = "Profile saved in this browser.";
+}
+function resetDemo() {
+  if (!confirm("Reset all demo points and activity?")) return;
+  clearTimeout(roundTimer);
+  playing = false;
+  state = freshState();
+  document.getElementById("target").disabled = true;
+  document.getElementById("startGame").disabled = false;
+  document.getElementById("gameScore").textContent = "0 taps";
+  document.getElementById("gameStatus").textContent = "Ready when you are.";
+  persist();
+}
+render();
+</script>
+</body>
+</html>

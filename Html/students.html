@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students - My School</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial,sans-serif;
+        }
+
+        body {
+            background: #f5f7fa;
+        }
+
+        nav {
+            background: #123c69;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover {
+            color: #ffd166;
+        }
+
+        .header {
+            background: #123c69;
+            color: white;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+        }
+
+        .student-area {
+            padding: 50px 8%;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px 15px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,.1);
+        }
+
+        .icon {
+            font-size: 45px;
+        }
+
+        .card h3 {
+            color: #123c69;
+            margin: 15px 0;
+        }
+
+        .student-form {
+            max-width: 700px;
+            margin: 40px auto 0;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .student-form h2 {
+            color: #123c69;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        button {
+            background: #123c69;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        footer {
+            background: #123c69;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media(max-width:900px) {
+            .cards {
+                grid-template-columns: repeat(2,1fr);
+            }
+        }
+
+        @media(max-width:600px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">🏫 MY SCHOOL</div>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="courses.html">Courses</a>
+        <a href="admission.html">Admission</a>
+        <a href="students.html">Students</a>
+        <a href="teachers.html">Teachers</a>
+        <a href="notice.html">Notice</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a href="location.html">Location</a>
+        <a href="admin.html">Admin</a>
+    </div>
+</nav>
+
+<div class="header">
+    <h1>👩‍🎓 Student Portal</h1>
+    <p>Student information and services</p>
+</div>
+
+<section class="student-area">
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">👤</div>
+            <h3>Student Profile</h3>
+            <p>View student information.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📊</div>
+            <h3>Results</h3>
+            <p>Check examination results.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📅</div>
+            <h3>Attendance</h3>
+            <p>View attendance details.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📢</div>
+            <h3>Notices</h3>
+            <p>Read important school notices.</p>
+        </div>
+
+    </div>
+
+    <div class="student-form">
+
+        <h2>Student Information</h2>
+
+        <form onsubmit="studentLogin(event)">
+
+            <input
+                type="text"
+                id="studentName"
+                placeholder="Student Name"
+                required
+            >
+
+            <input
+                type="text"
+                placeholder="Roll Number"
+                required
+            >
+
+            <input
+                type="text"
+                placeholder="Class"
+                required
+            >
+
+            <input
+                type="text"
+                placeholder="Section"
+                required
+            >
+
+            <input
+                type="text"
+                placeholder="Parent / Guardian Name"
+                required
+            >
+
+            <button type="submit">Submit</button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<footer>
+    © 2026 My School. All Rights Reserved.
+</footer>
+
+<script>
+function studentLogin(event) {
+    event.preventDefault();
+
+    let name = document.getElementById("studentName").value;
+
+    alert("Welcome " + name + "!");
+}
+</script>
+
+</body>
+</html>

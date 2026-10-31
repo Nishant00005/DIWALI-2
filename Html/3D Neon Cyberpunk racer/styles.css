@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&display=swap');
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #02030e;
+  color: #eff;
+  font-family: Orbitron, system-ui, sans-serif;
+}
+
+#app, canvas {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+
+#app { position: relative; overflow: hidden; }
+
+canvas { position: absolute; inset: 0; }
+
+#hud, #nitro, .screen, nav {
+  position: absolute;
+  z-index: 2;
+}
+
+#hud {
+  inset: 22px 28px auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  pointer-events: none;
+}
+
+#hud > b {
+  font-size: clamp(20px, 3vw, 30px);
+  letter-spacing: .1em;
+  text-shadow: 0 0 16px #0ef;
+}
+
+i {
+  color: #f2d;
+  font-style: normal;
+  text-shadow: 0 0 16px #f2d;
+}
+
+small {
+  display: block;
+  margin-top: 7px;
+  color: #789;
+  font-size: 8px;
+  letter-spacing: .25em;
+}
+
+#hud section {
+  display: flex;
+  gap: clamp(10px, 3vw, 30px);
+  text-align: right;
+}
+
+label {
+  color: #8aa;
+  font-size: 9px;
+  letter-spacing: .14em;
+}
+
+strong {
+  display: block;
+  color: white;
+  font-size: clamp(16px, 2vw, 24px);
+  text-shadow: 0 0 12px #0ef;
+}
+
+#nitro {
+  left: 28px;
+  bottom: 28px;
+  width: 160px;
+  height: 15px;
+  border: 1px solid #0ef;
+  background: #061122;
+  box-shadow: 0 0 14px #0ef8;
+}
+
+#nitro span {
+  position: absolute;
+  top: -17px;
+  left: 4px;
+  font-size: 9px;
+  letter-spacing: .15em;
+}
+
+#nitro div {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #06f, #0ff);
+  box-shadow: 0 0 14px #0ef;
+  transition: width .1s;
+}
+
+.screen {
+  inset: 0;
+  display: grid;
+  place-content: center;
+  padding: 25px;
+  text-align: center;
+  background: radial-gradient(ellipse, #0b123aaa, #02030edd);
+}
+
+.screen p {
+  color: #0ef;
+  font-size: 11px;
+  letter-spacing: .25em;
+}
+
+.screen h1,
+.screen h2 {
+  margin: 5px 0 20px;
+  font-size: clamp(48px, 10vw, 96px);
+  line-height: .84;
+  letter-spacing: .05em;
+  text-shadow: 4px 0 #f2d, -4px 0 #0ef, 0 0 30px #73f;
+}
+
+.screen h2 {
+  color: #f2d;
+  font-size: clamp(38px, 8vw, 72px);
+}
+
+.screen aside {
+  color: #bcd;
+  font-size: 13px;
+  line-height: 2;
+}
+
+button {
+  min-width: 190px;
+  margin: 20px auto 0;
+  padding: 15px 22px;
+  border: 1px solid #0ef;
+  background: #06203ccc;
+  color: #eff;
+  font: 700 13px Orbitron, sans-serif;
+  letter-spacing: .12em;
+  cursor: pointer;
+  box-shadow: 0 0 18px #0ef8;
+}
+
+button:hover {
+  transform: scale(1.04);
+  background: #075c7c;
+}
+
+.hide { display: none !important; }
+
+nav {
+  right: 15px;
+  bottom: 18px;
+  display: none;
+  gap: 7px;
+}
+
+nav button {
+  min-width: 52px;
+  min-height: 52px;
+  margin: 0;
+  padding: 7px;
+}
+
+nav button:nth-child(2) {
+  border-color: #f2d;
+  color: #f9c;
+}
+
+@media (pointer: coarse), (max-width: 700px) {
+  nav { display: flex; }
+  #hud { inset: 16px; }
+  #nitro { left: 16px; bottom: 18px; width: 120px; }
+}

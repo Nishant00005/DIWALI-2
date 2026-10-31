@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>School Location - My School</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial,sans-serif;
+        }
+
+        body {
+            background: #f5f7fa;
+        }
+
+        nav {
+            background: #123c69;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover {
+            color: #ffd166;
+        }
+
+        .header {
+            background: #123c69;
+            color: white;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .location {
+            padding: 50px 8%;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+        }
+
+        .address {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,.1);
+        }
+
+        .address h2 {
+            color: #123c69;
+            margin-bottom: 20px;
+        }
+
+        .address p {
+            line-height: 1.8;
+        }
+
+        .map iframe {
+            width: 100%;
+            height: 400px;
+            border: 0;
+            border-radius: 12px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            background: #123c69;
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+        footer {
+            background: #123c69;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media(max-width:700px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .location {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">🏫 MY SCHOOL</div>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="courses.html">Courses</a>
+        <a href="admission.html">Admission</a>
+        <a href="students.html">Students</a>
+        <a href="teachers.html">Teachers</a>
+        <a href="notice.html">Notice</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a href="location.html">Location</a>
+        <a href="admin.html">Admin</a>
+    </div>
+</nav>
+
+<div class="header">
+    <h1>📍 School Location</h1>
+    <p>Find our school easily</p>
+</div>
+
+<section class="location">
+
+    <div class="address">
+
+        <h2>🏫 Our Address</h2>
+
+        <p>
+            <strong>My School</strong><br><br>
+
+            Main Road, Patna<br>
+            Bihar - 800001<br>
+            India<br><br>
+
+            📞 +91 98765 43210<br>
+            📧 info@myschool.com
+        </p>
+
+        <a
+            class="btn"
+            href="https://www.google.com/maps/search/?api=1&query=Patna+Bihar"
+            target="_blank"
+        >
+            🧭 Get Directions
+        </a>
+
+    </div>
+
+    <div class="map">
+
+        <iframe
+            src="https://www.google.com/maps?q=Patna,Bihar&output=embed"
+            loading="lazy"
+            allowfullscreen>
+        </iframe>
+
+    </div>
+
+</section>
+
+<footer>
+    © 2026 My School. All Rights Reserved.
+</footer>
+
+</body>
+</html>

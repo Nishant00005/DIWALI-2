@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070b13">
+  <title>NEON RACER | Arcade Racing</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <a class="brand" href="#">NEON<span>RACER</span></a>
+      <div class="stats">
+        <div><small>SCORE</small><strong id="score">0</strong></div>
+        <div><small>COINS</small><strong id="coins">0</strong></div>
+        <div><small>SPEED</small><strong><span id="speed">0</span><small> km/h</small></strong></div>
+      </div>
+    </header>
+
+    <section class="game-shell">
+      <canvas id="gameCanvas" aria-label="Neon Racer game"></canvas>
+
+      <div class="overlay" id="mainOverlay">
+        <p class="eyebrow">ARCADE RACING EXPERIENCE</p>
+        <h1 id="overlayTitle">READY TO<br><span>RACE?</span></h1>
+        <p id="overlayMessage">Dodge traffic. Collect coins. Own the road.</p>
+        <p class="best">BEST SCORE: <strong id="bestScore">0</strong></p>
+        <button class="primary" id="startBtn">START ENGINE ↗</button>
+        <button class="secondary" id="openGarage">🏎️ SELECT YOUR CAR</button>
+        <small class="hint">STEER: ← → / A D · BOOST: SPACE / W</small>
+      </div>
+
+      <div class="garage hidden" id="garage">
+        <p class="eyebrow">YOUR PERSONAL GARAGE</p>
+        <h2>CHOOSE YOUR RIDE</h2>
+        <div class="car-grid">
+          <button class="car-option selected" data-color="#39f5e4">
+            <span class="car-swatch" style="--car:#39f5e4"></span>CYBER
+          </button>
+          <button class="car-option" data-color="#ff477e">
+            <span class="car-swatch" style="--car:#ff477e"></span>NEON
+          </button>
+          <button class="car-option" data-color="#ffc857">
+            <span class="car-swatch" style="--car:#ffc857"></span>TURBO
+          </button>
+          <button class="car-option" data-color="#a78bfa">
+            <span class="car-swatch" style="--car:#a78bfa"></span>PHANTOM
+          </button>
+        </div>
+        <button class="primary" id="closeGarage">LET'S RACE ↗</button>
+      </div>
+
+      <div class="boost-indicator" id="boostIndicator">⚡ NITRO ACTIVE</div>
+    </section>
+
+    <section class="controls">
+      <button class="control" id="leftBtn" aria-label="Steer left">←</button>
+      <button class="control brake" id="brakeBtn" aria-label="Brake">▼</button>
+      <button class="control nitro" id="nitroBtn" aria-label="Nitro boost">⚡</button>
+      <button class="control" id="rightBtn" aria-label="Steer right">→</button>
+    </section>
+
+    <footer>
+      <span>NEON RACER <span class="dim">/ 2026</span></span>
+      <span>AVOID TRAFFIC · COLLECT COINS</span>
+    </footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>NEON RACER 3D</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main id="app">
+    <div id="hud">
+      <b>NEON <i>RACER</i><small>3D // NIGHT RUN</small></b>
+      <section>
+        <label>SCORE<strong id="score">0</strong></label>
+        <label>COINS<strong id="coins">0</strong></label>
+        <label>BEST<strong id="best">0</strong></label>
+      </section>
+    </div>
+
+    <div id="nitro"><span>NITRO</span><div></div></div>
+
+    <section id="start" class="screen">
+      <p>SYSTEM READY // 2088</p>
+      <h1>NEON<br><i>RACER</i></h1>
+      <aside>Steer: ← → or A D<br>Boost: Space / Shift</aside>
+      <button id="startButton">START ENGINE</button>
+    </section>
+
+    <section id="over" class="screen hide">
+      <p>VEHICLE OFFLINE</p>
+      <h2>GAME OVER</h2>
+      <aside id="final"></aside>
+      <button id="restartButton">RACE AGAIN</button>
+    </section>
+
+    <nav>
+      <button data-key="left">◀</button>
+      <button data-key="nitro">NITRO</button>
+      <button data-key="right">▶</button>
+    </nav>
+  </main>
+
+  <script type="module" src="game.js"></script>
+</body>
+</html>

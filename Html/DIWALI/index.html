@@ -1,0 +1,290 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#19090d">
+    <title>Royal Diwali 2026 | Festival of Lights</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="theme-royal">
+
+    <canvas id="fireworks"></canvas>
+
+    <!-- NAVIGATION -->
+    <header class="navbar">
+        <a href="#home" class="logo">🪔 HAPPY <span>DIWALI</span></a>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#wishes">Wishes</a>
+            <a href="#diyas">Diyas</a>
+            <a href="#gallery">Gallery</a>
+        </nav>
+
+        <div class="nav-controls">
+            <select id="themeSelect" aria-label="Select website theme">
+                <option value="royal">👑 Luxury Royal</option>
+                <option value="dark">🌙 Premium Dark</option>
+                <option value="traditional">🪔 Traditional</option>
+                <option value="colorful">🌈 Colorful 3D</option>
+            </select>
+
+            <button class="music-btn" id="musicBtn">
+                ♫ Music OFF
+            </button>
+        </div>
+    </header>
+
+    <main>
+
+       <!-- HERO SECTION -->
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+                <p class="eyebrow">✦ THE FESTIVAL OF LIGHTS ✦</p>
+
+                <h1>
+                    Happy<br>
+                    <span>Diwali</span> 2026
+                </h1>
+
+                <div class="gold-line"></div>
+
+                <p class="hero-text">
+                    May your life shine brighter than a thousand diyas.
+                    May happiness, prosperity and love fill your home.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#wishes" class="primary-btn">
+                        Explore Wishes ✨
+                    </a>
+
+                    <button class="secondary-btn" id="celebrateBtn">
+                        Celebrate 🎆
+                    </button>
+                </div>
+            </div>
+
+            <div class="hero-art">
+                <div class="mandala">✺</div>
+
+                <div class="main-diya">
+                    <div class="flame"></div>
+                    <div class="diya-bowl"></div>
+                    <div class="diya-base"></div>
+                </div>
+
+                <span class="floating-star star1">✦</span>
+                <span class="floating-star star2">✧</span>
+                <span class="floating-star star3">✦</span>
+            </div>
+
+            <div class="scroll-hint">
+                SCROLL TO EXPLORE ↓
+            </div>
+
+        </section>
+
+        <!-- WISHES SECTION -->
+        <section class="section intro" id="wishes">
+
+            <p class="eyebrow">A FESTIVAL OF LOVE & LIGHT</p>
+
+            <h2>
+                Spread Happiness,<br>
+                <span>Spread Light.</span>
+            </h2>
+
+            <p class="section-description">
+                Celebrate the beautiful festival of Diwali with your
+                loved ones. Share smiles, light diyas and create memories.
+            </p>
+
+            <div class="wish-card">
+
+                <div class="wish-icon">🌸</div>
+
+                <p class="eyebrow">A SPECIAL MESSAGE FOR YOU</p>
+
+                <h3 id="wishText">
+                    May this Diwali bring endless joy,
+                    success and prosperity into your life!
+                </h3>
+
+                <p class="wish-subtitle">
+                    ✨ Wishing You A Very Happy Diwali ✨
+                </p>
+
+                <div class="wish-buttons">
+                    <button class="primary-btn" id="newWishBtn">
+                        New Wish ✨
+                    </button>
+
+                    <button class="secondary-btn" id="copyWishBtn">
+                        Copy Wish 📋
+                    </button>
+
+                    <button class="secondary-btn" id="whatsappBtn">
+                        WhatsApp ↗
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- DIYA SECTION -->
+        <section class="section diya-section" id="diyas">
+
+            <p class="eyebrow">LIGHT UP YOUR WORLD</p>
+
+            <h2>
+                Light The <span>Diyas</span>
+            </h2>
+
+            <p class="section-description">
+                Click on each diya to light it up or turn it off.
+            </p>
+
+            <div class="diya-grid">
+
+                <button class="little-diya" aria-label="Toggle diya 1">
+                    <span class="little-flame"></span>
+                    <span class="little-bowl">🪔</span>
+                    <small>Diya One</small>
+                </button>
+
+                <button class="little-diya" aria-label="Toggle diya 2">
+                    <span class="little-flame"></span>
+                    <span class="little-bowl">🪔</span>
+                    <small>Diya Two</small>
+                </button>
+
+                <button class="little-diya" aria-label="Toggle diya 3">
+                    <span class="little-flame"></span>
+                    <span class="little-bowl">🪔</span>
+                    <small>Diya Three</small>
+                </button>
+
+                <button class="little-diya" aria-label="Toggle diya 4">
+                    <span class="little-flame"></span>
+                    <span class="little-bowl">🪔</span>
+                    <small>Diya Four</small>
+                </button>
+
+            </div>
+
+            <p class="diya-note" id="diyaStatus">
+                Your diyas are waiting to shine!
+            </p>
+
+            <div class="diya-actions">
+                <button class="primary-btn" id="allDiyasBtn">
+                    Light All Diyas ✨
+                </button>
+
+                <button class="secondary-btn" id="offDiyasBtn">
+                    Turn All Off
+                </button>
+            </div>
+
+        </section>
+
+        <!-- SWEETS AND GIFTS GALLERY -->
+        <section class="section gallery-section" id="gallery">
+
+            <p class="eyebrow">SWEET MEMORIES & GIFTING</p>
+
+            <h2>
+                Festive <span>Collections</span>
+            </h2>
+
+            <p class="section-description">
+                A little sweetness, a little sparkle and a lot of love.
+            </p>
+
+            <div class="gallery-grid">
+
+                <article class="gallery-card">
+                    <div class="gallery-art">🍬</div>
+                    <div class="gallery-info">
+                        <h3>Royal Sweets</h3>
+                        <p>Sweet moments, sweeter memories.</p>
+                    </div>
+                </article>
+
+                <article class="gallery-card">
+                    <div class="gallery-art">🎁</div>
+                    <div class="gallery-info">
+                        <h3>Luxury Gifts</h3>
+                        <p>Beautiful surprises for special people.</p>
+                    </div>
+                </article>
+
+                <article class="gallery-card">
+                    <div class="gallery-art">🌺</div>
+                    <div class="gallery-info">
+                        <h3>Festive Flowers</h3>
+                        <p>Decorate your home with happiness.</p>
+                    </div>
+                </article>
+
+                <article class="gallery-card">
+                    <div class="gallery-art">🎨</div>
+                    <div class="gallery-info">
+                        <h3>Royal Rangoli</h3>
+                        <p>Colour your celebrations with joy.</p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- FINAL CELEBRATION -->
+        <section class="final-section">
+
+            <div class="final-content">
+
+                <p class="eyebrow">LET THE LIGHTS SHINE</p>
+
+                <h2>
+                    Celebrate With<br>
+                    <span>Love & Light.</span>
+                </h2>
+
+                <p>
+                    Wishing you and your family a joyful
+                    and prosperous Diwali.
+                </p>
+
+                <button class="primary-btn" id="finalCelebrate">
+                    Launch Fireworks 🎆
+                </button>
+
+            </div>
+        </section> 
+
+    </main> 
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="logo">🪔 HAPPY <span>DIWALI</span></div>
+
+        <p>Made with ❤️ for the Festival of Lights</p>
+
+        <p class="copyright">
+            © 2026 Royal Diwali Celebration | Demo Project
+        </p>
+
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

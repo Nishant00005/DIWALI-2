@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About School - My School</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f7fa;
+            color: #333;
+        }
+
+        nav {
+            background: #123c69;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover {
+            color: #ffd166;
+        }
+
+        .header {
+            background: #123c69;
+            color: white;
+            text-align: center;
+            padding: 55px 20px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+        }
+
+        .about {
+            padding: 60px 8%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about img {
+            width: 100%;
+            border-radius: 15px;
+        }
+
+        .about h2 {
+            color: #123c69;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            line-height: 1.8;
+        }
+
+        .cards {
+            padding: 0 8% 60px;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,.1);
+        }
+
+        .card h3 {
+            color: #123c69;
+            margin: 15px 0;
+        }
+
+        footer {
+            background: #123c69;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media(max-width:700px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .about,
+            .cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">🏫 MY SCHOOL</div>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="courses.html">Courses</a>
+        <a href="admission.html">Admission</a>
+        <a href="students.html">Students</a>
+        <a href="teachers.html">Teachers</a>
+        <a href="notice.html">Notice</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a href="location.html">Location</a>
+        <a href="admin.html">Admin</a>
+    </div>
+</nav>
+
+<div class="header">
+    <h1>👨‍🏫 About Our School</h1>
+    <p>Building a better future through education</p>
+</div>
+
+<section class="about">
+
+    <img src="school.jpg" alt="School">
+
+    <div>
+        <h2>Welcome to My School</h2>
+
+        <p>
+            My School is dedicated to providing quality education
+            in a safe, supportive and inspiring environment.
+            Our aim is to develop academic knowledge, confidence,
+            discipline and leadership qualities in students.
+        </p>
+
+        <br>
+
+        <p>
+            We believe every student has unique potential.
+            Our teachers and staff work together to help students
+            achieve their goals.
+        </p>
+    </div>
+
+</section>
+
+<section class="cards">
+
+    <div class="card">
+        <div style="font-size:40px;">🎯</div>
+        <h3>Our Mission</h3>
+        <p>To provide quality education and develop responsible citizens.</p>
+    </div>
+
+    <div class="card">
+        <div style="font-size:40px;">🌟</div>
+        <h3>Our Vision</h3>
+        <p>To create confident, knowledgeable and successful students.</p>
+    </div>
+
+    <div class="card">
+        <div style="font-size:40px;">🤝</div>
+        <h3>Our Values</h3>
+        <p>Knowledge, Respect, Discipline, Honesty and Excellence.</p>
+    </div>
+
+</section>
+
+<footer>
+    © 2026 My School. All Rights Reserved.
+</footer>
+
+</body>
+</html>
